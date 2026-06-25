@@ -11,19 +11,39 @@
 
   <div id="ui">
     <div class="title">Three-Body Problem</div>
+
     <div class="controls">
       <button id="pauseBtn" title="Play/Pause">⏸</button>
       <button id="resetBtn" title="Reset">↺</button>
+      <button id="perturbBtn" title="Perturb (nudge to see chaos)">⟳</button>
+
+      <select id="presetSelect">
+        <option>Figure-8</option>
+        <option>Butterfly I</option>
+        <option>Butterfly II</option>
+        <option>Moth I</option>
+        <option>Chaotic</option>
+      </select>
+
       <div class="control-group">
         <label for="speedSlider">Speed</label>
         <input type="range" id="speedSlider" min="0.1" max="5" step="0.1" value="1">
         <span id="speedLabel">1.0×</span>
       </div>
-      <div class="control-group">
-        <label><input type="checkbox" id="trailToggle" checked> Trails</label>
-      </div>
+
+      <label class="toggle"><input type="checkbox" id="trailToggle" checked> Trails</label>
+      <label class="toggle"><input type="checkbox" id="autoRotateToggle"> Orbit</label>
     </div>
-    <div class="info">Drag to orbit · Scroll to zoom · Figure-8 orbit</div>
+
+    <div class="energy">
+      <span>KE <span id="keValue">0.0000</span></span>
+      <span class="sep">|</span>
+      <span>PE <span id="peValue">0.0000</span></span>
+      <span class="sep">|</span>
+      <span>E <span id="totalValue">0.0000</span></span>
+    </div>
+
+    <div class="info">Drag orbit · Scroll zoom · Space pause · R reset · P perturb</div>
   </div>
 
   <script type="importmap">
